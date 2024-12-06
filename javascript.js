@@ -32,12 +32,10 @@ function afficherEtCacherMotDePasse(element) {
     }
 }
 
-function nouvelObjet()[
-    let personne = new Object();
-    maVoiture.fabricant = "Ford";
-    maVoiture.modele = "Mustang";
-    maVoiture.annee = 1969;
-]
+function Personne(mail, mdp) {
+    this.mail = mail;
+    this.mdp = mdp;
+}
 
 // Fonctions Jquery pour vrifier que les champs sont tous bien remplis
 $(inscription).on('change', function(){
@@ -66,12 +64,6 @@ voirPassword.addEventListener('click', function (){
     afficherEtCacherMotDePasse(password)
     afficherEtCacherMotDePasse(password2)
 })
-
-async function afficherFilms() {
-    const reponse = await fetch("ajax.php");
-    const films = await reponse.json();
-    console.log(films);
-}
 
 submit[0].addEventListener('click', function(e){
     e.preventDefault();
@@ -103,6 +95,7 @@ submit[0].addEventListener('click', function(e){
                 email_login.value += email.value;
                 password_login.value += password.value;
                 submit[1].disabled = false;
+                Personne.create(email_login.value, password_login.value);
 
             }else{
                 console.log('t\'es pas chaud t\'es pas chaud');
